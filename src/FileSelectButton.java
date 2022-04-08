@@ -15,5 +15,8 @@ class FileSelectButton extends Button {
             System.out.println(fileName);
         });
     }
-    //EncryptFile encryptor = new EncryptFileECB();
+    //If Encrypt radiobutton = true
+    //EncryptFile encryptor = new EncryptFile();
+    //Else If Decrypt radiobutton = true
+    //DecryptFile decrypt = new DecryptFile();
 }
