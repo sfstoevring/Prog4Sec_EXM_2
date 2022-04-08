@@ -19,15 +19,10 @@
             -fx-margin: 40px;
         }
 
-.label {
--fx-font: 30px "Serif";
--fx-margin:auto;
-}
+
 
 
 .label{
     -fx-font: bold 45px "Arial";
-    -fx-effect: dropshadow( one-pass-box , rgba(255,255,255,0.2), 8, 0.0 , 2,0);
-
 }
 
