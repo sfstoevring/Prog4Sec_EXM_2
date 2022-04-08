@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class FxScene extends Application{
     public void start(Stage stage) throws Exception {
         Label label = new Label("label her");
-        HBox hBox = new HBox();
+        HBox hBox = new HBox(label);
 
         Scene scene = new Scene(hBox,600, 400);
 

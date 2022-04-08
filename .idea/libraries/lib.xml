@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/JavaAddOns/JavaFXDir/javafx-sdk-17.0.2/lib" />
+      <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcpkix-jdk15on-170.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcprov-ext-jdk15on-170.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcutil-jdk15on-170.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/JavaAddOns/JavaFXDir/javafx-sdk-17.0.2/lib" recursive="false" />
+  </library>
+</component>
