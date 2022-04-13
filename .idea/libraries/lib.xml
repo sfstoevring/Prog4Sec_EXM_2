@@ -5,6 +5,7 @@
       <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcpkix-jdk15on-170.jar!/" />
       <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcprov-ext-jdk15on-170.jar!/" />
       <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcutil-jdk15on-170.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JavaAddOns/BCDir/bcprov-jdk15on-170.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

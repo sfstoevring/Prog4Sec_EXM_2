@@ -12,11 +12,11 @@ class FileSelectButton extends Button {
         setOnAction(e -> {
             File file = fileChooser.showOpenDialog(new Stage());
             String fileName = file.getAbsolutePath();
+            encryptor.encrypt(fileName);
             System.out.println(fileName);
         });
     }
-    //If Encrypt radiobutton = true
-    //EncryptFile encryptor = new EncryptFile();
-    //Else If Decrypt radiobutton = true
-    //DecryptFile decrypt = new DecryptFile();
+
+    EncryptFileCBC encryptor = new EncryptFileCBC();
+    DecryptFileCBC decrypt = new DecryptFileCBC();
 }
