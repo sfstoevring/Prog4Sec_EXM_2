@@ -20,23 +20,33 @@ public class FxScene extends Application{
         Label label = new Label("Cryptography");
         label.setUnderline(true);
 
+        /*
         //Radiobuttons
         ToggleGroup toggleGroup = new ToggleGroup();
-        RadioButton radioButton = new RadioButton("Encrypt");
-        RadioButton radioButton1 = new RadioButton("Decrypt");
-        radioButton.setToggleGroup(toggleGroup);
-        radioButton.setSelected(true);
-        radioButton1.setToggleGroup(toggleGroup);
+        RadioButton radioButtonEncrypt = new RadioButton("Encrypt");
+        RadioButton radioButtonDecrypt = new RadioButton("Decrypt");
+        radioButtonEncrypt.setToggleGroup(toggleGroup);
+        radioButtonEncrypt.setSelected(true);
+        radioButtonDecrypt.setToggleGroup(toggleGroup);
+         */
 
-        //button
-        FileSelectButton button = new FileSelectButton(dir);
+
+        //buttons
+        SelectFileEncryptButton buttonEncrypt = new SelectFileEncryptButton(dir);
+        SelectFileDecryptButton buttonDecrypt = new SelectFileDecryptButton(dir);
+
+
+        // Add input for key gen.... password
+
+
+
 
         //Boxes
-        HBox hBox = new HBox(radioButton,radioButton1);
+        HBox hBox = new HBox(buttonEncrypt,buttonDecrypt);
         hBox.setAlignment(Pos.BASELINE_CENTER);
         hBox.setSpacing(25);
 
-        VBox vBox = new VBox(label, hBox,button);
+        VBox vBox = new VBox(label, hBox);
         vBox.setAlignment(Pos.BASELINE_CENTER);
         vBox.setSpacing(50);
 

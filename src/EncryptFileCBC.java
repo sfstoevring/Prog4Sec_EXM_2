@@ -12,11 +12,14 @@ public class EncryptFileCBC {
         try{
 
             // reading
-            byte[] input = FileUtil.readAllBytes(filePath);
+            byte[] input = FileUtil.readAllBytesEncrypt(filePath);
             byte[] iv = FileUtil.generateInitialVector();
             // encrypting
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
             SecretKeySpec key = new SecretKeySpec(keyBytes, "AES");
+
+           //check iv!!!
+
             IvParameterSpec ivParams = new IvParameterSpec(iv);
             cipher.init(Cipher.ENCRYPT_MODE, key, ivParams);
             byte[] output = cipher.doFinal(input);
