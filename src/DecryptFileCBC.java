@@ -10,10 +10,11 @@ public class DecryptFileCBC {
     static byte[] keyBytes = Hex.decode("000102030405060708090a0b0c0d0e0f");
 
 
-    public static void decrypt(String filePath) {
+    public static void decrypt(String filePath, String pw) {
         try{
 
             String ivString = FileUtil.getInitialVector(filePath);
+            System.out.println("ivstring: " + ivString);
             IvParameterSpec iv = new IvParameterSpec(Hex.decode(ivString));
             byte[] input = FileUtil.readAllBytesDecrypt(filePath);
 

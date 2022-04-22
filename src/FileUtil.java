@@ -84,7 +84,10 @@ public class FileUtil {
     public static String getInitialVector(String filePath){
 
         String[] parts = filePath.split("[\\p{Punct}]");
-        return parts[2];
+        /*for (int i = 0; i < parts.length; i++){
+            System.out.println(i + ": " + parts[i]);
+        }*/
+        return parts[parts.length-2];
     }
     public static String getFileName(String filePath){
         String fileAbsolute = filePath.substring(0,filePath.length()-37);

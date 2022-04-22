@@ -10,13 +10,18 @@ class SelectFileDecryptButton extends Button {
         setText("Decrypt");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(dir));
+        PopUpHandler popUpHandler = new PopUpHandler();
 
         setOnAction(e -> {
             File file = fileChooser.showOpenDialog(new Stage());
-
+            String pw = popUpHandler.getPassword("Type password to decrypt");
             String fileName = file.getAbsolutePath();
 
-                decryptor.decrypt(fileName);
+
+
+
+
+                decryptor.decrypt(fileName, pw);
 
         });
     }

@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
@@ -35,8 +36,6 @@ public class FxScene extends Application{
         SelectFileEncryptButton buttonEncrypt = new SelectFileEncryptButton(dir);
         SelectFileDecryptButton buttonDecrypt = new SelectFileDecryptButton(dir);
 
-
-        // Add input for key gen.... password
 
 
 
