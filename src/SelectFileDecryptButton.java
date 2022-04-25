@@ -1,5 +1,4 @@
 import javafx.scene.control.Button;
-import javafx.scene.control.ToggleGroup;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -17,11 +16,7 @@ class SelectFileDecryptButton extends Button {
             String pw = popUpHandler.getPassword("Type password to decrypt");
             String fileName = file.getAbsolutePath();
 
-
-
-
-
-                decryptor.decrypt(fileName, pw);
+            decryptor.decrypt(fileName, pw);
 
         });
     }

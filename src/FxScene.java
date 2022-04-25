@@ -1,9 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
@@ -21,24 +18,9 @@ public class FxScene extends Application{
         Label label = new Label("Cryptography");
         label.setUnderline(true);
 
-        /*
-        //Radiobuttons
-        ToggleGroup toggleGroup = new ToggleGroup();
-        RadioButton radioButtonEncrypt = new RadioButton("Encrypt");
-        RadioButton radioButtonDecrypt = new RadioButton("Decrypt");
-        radioButtonEncrypt.setToggleGroup(toggleGroup);
-        radioButtonEncrypt.setSelected(true);
-        radioButtonDecrypt.setToggleGroup(toggleGroup);
-         */
-
-
         //buttons
         SelectFileEncryptButton buttonEncrypt = new SelectFileEncryptButton(dir);
         SelectFileDecryptButton buttonDecrypt = new SelectFileDecryptButton(dir);
-
-
-
-
 
         //Boxes
         HBox hBox = new HBox(buttonEncrypt,buttonDecrypt);

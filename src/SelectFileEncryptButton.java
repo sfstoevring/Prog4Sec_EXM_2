@@ -26,8 +26,6 @@ class SelectFileEncryptButton extends Button {
             encryptor.encrypt(fileName, pw);
             });
 
-
-
     }
 
         EncryptFileCBC encryptor = new EncryptFileCBC();

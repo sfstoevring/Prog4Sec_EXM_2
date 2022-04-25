@@ -1,18 +1,11 @@
-import javafx.application.Application;
-import javafx.beans.property.StringProperty;
-import javafx.css.converter.LadderConverter;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
-
 
 public class PopUpHandler {
 
@@ -22,7 +15,7 @@ public class PopUpHandler {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Type your password");
-        stage.setMinWidth(250);
+        stage.setMinWidth(300);
         Label label = new Label();
         label.setText(msg);
 

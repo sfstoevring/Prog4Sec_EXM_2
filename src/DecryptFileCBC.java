@@ -1,12 +1,8 @@
-    import javax.crypto.Cipher;
+import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import org.bouncycastle.util.encoders.Hex;
 
-    import org.bouncycastle.mime.encoding.Base64OutputStream;
-    import org.bouncycastle.util.encoders.Base64;
-    import org.bouncycastle.util.encoders.Hex;
-
-import java.io.File;
 
 public class DecryptFileCBC {
 
@@ -14,6 +10,9 @@ public class DecryptFileCBC {
 
 
     public static void decrypt(String filePath, String pw) {
+
+        System.out.println("Password: " + pw + " accepted");
+
         try{
             System.out.println("File read!");
             System.out.println("Fetching iv from selected file...");
