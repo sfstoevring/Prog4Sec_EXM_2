@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class PopUpHandler {
 
+    //some inspiration found from: https://www.youtube.com/watch?v=HFAsMWkiLvg
     static String pw;
 
     public static String getPassword(String msg){
