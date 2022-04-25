@@ -14,21 +14,19 @@ public class DecryptFileCBC {
 
 
     public static void decrypt(String filePath, String pw) {
-        System.out.println("yolo");
         try{
-
+            System.out.println("File read!");
+            System.out.println("Fetching iv from selected file...");
             String ivString = FileUtil.getInitialVector(filePath);
             System.out.println("ivstring: " + ivString);
             IvParameterSpec iv = new IvParameterSpec(Hex.decode(ivString));
-            System.out.println(iv);
             byte[] input = FileUtil.readAllBytesDecrypt("AES/CBC/PKCS5Padding", filePath);
-
 
             // decrypting
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
             SecretKeySpec key = new SecretKeySpec(keyBytes, "AES");
             cipher.init(Cipher.DECRYPT_MODE, key, iv);
-
+            System.out.println("Now decrypting...");
             byte[] output = cipher.doFinal(input);
             // writing
             FileUtil.write(filePath, output);

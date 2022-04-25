@@ -16,6 +16,8 @@ public class EncryptFileCBC {
     public static void encrypt(String filePath, String pw) {
         try{
             // reading
+
+            System.out.println("File read!\n" + "Now encrypting...");
             byte[] input = FileUtil.readAllBytesEncrypt(filePath);
             byte[] iv = FileUtil.generateInitialVector();
             // encrypting

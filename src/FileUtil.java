@@ -14,21 +14,10 @@ public class FileUtil {
         byte[] bytesRead = {};
         try {
             bytesRead = Files.readAllBytes(Paths.get(filePath));
-            System.out.println("File read!\n" + "Now encrypting...\n");
         } catch (Exception e) {}
         return bytesRead; // returns {} if file does not exist
     }
-/*
-    public static byte[] readAllBytesDecrypt(String transformation, String filePath) {
-        byte[] bytesRead = {};
-        try {
-            bytesRead = Files.readAllBytes(Paths.get(filePath));
-        } catch (Exception e) {}
-        System.out.println(bytesRead);
-        return bytesRead;
 
-    }
-  */
     public static byte[] readAllBytesDecrypt(String transformation, String plaintextFileName) {
         byte[] bytesRead = {};
         String cFile = "";
@@ -46,22 +35,10 @@ public class FileUtil {
 
 
     public static void write(String filePath, byte[] output) {
-        String decryptedFile = getFileName(filePath) + "decrypted.txt";
+        String decryptedFile = getFileName(filePath) + "_decrypted.txt";
         try {
             Files.write(Paths.get(decryptedFile), output);
-        } catch (Exception e) { e.printStackTrace(); }
-    }
-
-    public static void write(String transformation, String plaintextFileName, byte[] output) {
-        String outFile = "";
-        String[] parts = transformation.split("/");
-        if (parts.length == 3 && parts[0].equals("AES")) {
-            outFile = plaintextFileName + "." + "aes";
-            System.out.println("Encrypting file...\n" + outFile);
-        } else {  }
-        try {
-
-            Files.write(Paths.get(outFile), output);
+            System.out.println("Decrypted file is located at: " + decryptedFile);
         } catch (Exception e) { e.printStackTrace(); }
     }
 
@@ -89,7 +66,7 @@ public class FileUtil {
         return parts[parts.length-2];
     }
     public static String getFileName(String filePath){
-        String fileAbsolute = filePath.substring(0,filePath.length()-40);
+        String fileAbsolute = filePath.substring(0,filePath.length()-41);
         return fileAbsolute;
     }
 }
