@@ -1,3 +1,6 @@
+import org.bouncycastle.util.encoders.Base64;
+import org.bouncycastle.util.encoders.UTF8;
+
 import javax.crypto.spec.IvParameterSpec;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,35 +18,35 @@ public class FileUtil {
         } catch (Exception e) {}
         return bytesRead; // returns {} if file does not exist
     }
-
-    public static byte[] readAllBytesDecrypt(String filePath) {
+/*
+    public static byte[] readAllBytesDecrypt(String transformation, String filePath) {
         byte[] bytesRead = {};
         try {
             bytesRead = Files.readAllBytes(Paths.get(filePath));
         } catch (Exception e) {}
+        System.out.println(bytesRead);
         return bytesRead;
+
     }
-    /*
-    public static byte[] readAllBytesDecrypt(String transformation, String plaintextFileName, IvParameterSpec iv) {
+  */
+    public static byte[] readAllBytesDecrypt(String transformation, String plaintextFileName) {
         byte[] bytesRead = {};
         String cFile = "";
         String[] parts = transformation.split("/");
-        String fileName = getFileName(plaintextFileName);
+
         if (parts.length == 3 && parts[0].equals("AES")) {
-            cFile = fileName + ".txt";
+            cFile = plaintextFileName;
         }
-        write(cFile, bytesRead);
         try {
             bytesRead = Files.readAllBytes(Paths.get(cFile));
-        } catch (Exception e) {}
-
-        System.out.println("hello world");
+        } catch (Exception e) {
+        }
         return bytesRead;
-    }*/
+    }
 
 
     public static void write(String filePath, byte[] output) {
-        String decryptedFile = getFileName(filePath);
+        String decryptedFile = getFileName(filePath) + "decrypted.txt";
         try {
             Files.write(Paths.get(decryptedFile), output);
         } catch (Exception e) { e.printStackTrace(); }
@@ -57,7 +60,7 @@ public class FileUtil {
             System.out.println("Encrypting file...\n" + outFile);
         } else {  }
         try {
-            System.out.println();
+
             Files.write(Paths.get(outFile), output);
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -82,15 +85,11 @@ public class FileUtil {
     }
 
     public static String getInitialVector(String filePath){
-
         String[] parts = filePath.split("[\\p{Punct}]");
-        /*for (int i = 0; i < parts.length; i++){
-            System.out.println(i + ": " + parts[i]);
-        }*/
         return parts[parts.length-2];
     }
     public static String getFileName(String filePath){
-        String fileAbsolute = filePath.substring(0,filePath.length()-37);
+        String fileAbsolute = filePath.substring(0,filePath.length()-40);
         return fileAbsolute;
     }
 }
