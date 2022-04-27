@@ -31,7 +31,7 @@ public class FileUtil {
 
 
     public static void write(String filePath, byte[] output) {
-        String decryptedFile = getFileName(filePath) + "_decrypted.txt";
+        String decryptedFile = getFileName(filePath) + "_decrypted." + getFileType(filePath);
         try {
             Files.write(Paths.get(decryptedFile), output);
             System.out.println("Decrypted file is located at: " + decryptedFile);
@@ -64,5 +64,10 @@ public class FileUtil {
     public static String getFileName(String filePath){
         String fileAbsolute = filePath.substring(0,filePath.length()-41);
         return fileAbsolute;
+    }
+
+    public static String getFileType(String filePath){
+        String[] parts = filePath.split("[\\p{Punct}]");
+        return parts[parts.length-3];
     }
 }
